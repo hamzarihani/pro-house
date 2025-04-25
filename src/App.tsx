@@ -1,7 +1,7 @@
-import './app.scss';
+import './App.scss';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import AppHeader from './components/header/header';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const { i18n } = useTranslation();
@@ -19,3 +19,4 @@ function App() {
 }
 
 export default App;
+

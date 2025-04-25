@@ -6,11 +6,22 @@ export const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState('light');
+  const getInitialTheme = () => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return 'light';
+  };
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     document.body.classList.remove('theme-light', 'theme-dark');
     document.body.classList.add(`theme-${theme}`);
+
+    const favicon = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (favicon) {
+      favicon.href = getInitialTheme() === 'dark' ? '/favicon-light.ico' : '/favicon-dark.ico';
+    }
   }, [theme]);
 
   const toggleTheme = () => {

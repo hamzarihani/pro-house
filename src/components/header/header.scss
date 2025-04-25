@@ -8,6 +8,12 @@
   top: 0px;
   border-bottom: 1px solid var(--app-header-border);
   background: var(--app-header-background);
+  &__burger-button{
+    display: none;
+  }
+  &__mobile-menu{
+    display: none;
+  }
   &__menu-side {
     display: flex;
     align-items: center;
@@ -24,6 +30,7 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 22px;
+      white-space: nowrap;
     }
   }
   &__actions-side {
@@ -68,6 +75,62 @@
         background: #f61010;
         border-radius: 50%;
         border: 2px solid var(--app-header-background);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .pro-house-header {
+    padding: 16px 20px;
+    &__burger-button{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      height: 32px;
+      width: 32px;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    &__burger-button svg {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    &__burger-button.open svg:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    
+    &__burger-button.open svg:nth-child(2) {
+      opacity: 0;
+    }
+    
+    &__burger-button.open svg:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    &__mobile-menu{
+      display: flex;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      height: calc(100vh - 65px);
+      width: 0px;
+      border-inline-end: unset;
+      background: var(--app-header-background);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    &__mobile-menu.open{
+      width: 50%;
+      border-inline-end: 1px solid var(--app-header-border);
+    }
+    &__actions-side {
+      padding-inline-start: unset;
+      border-inline-start: unset;
+      &__connect-wallet {
+        display: none;
       }
     }
   }
