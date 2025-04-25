@@ -1,0 +1,16 @@
+services:
+  portfolio:
+    image: pro-house
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    healthcheck: 
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    volumes:
+     - .:/app/src
+    ports:
+      - "3000:3000"
