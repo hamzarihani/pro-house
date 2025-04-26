@@ -2,46 +2,39 @@ import "./header.scss";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import { useTranslation } from "react-i18next";
+import SvgIcon from "../svg-icon";
 
 const AppHeader = () => {
   const { i18n, t } = useTranslation();
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [ openMenu, setOpenMenu]= useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const switchLang = (lang: string) => {
     i18n.changeLanguage(lang);
   };
-
+  const links = [
+    {
+      label: "nav-items.marketplace",
+      onClick: () => {},
+    },
+    {
+      label: "nav-items.about-us",
+      onClick: () => {},
+    },
+    {
+      label: "nav-items.developers",
+      onClick: () => {},
+    },
+  ];
   return (
     <div className="pro-house-header">
-      <div className={`pro-house-header__burger-button ${openMenu ? 'open' : ''}`} onClick={()=>setOpenMenu(!openMenu)}>
-        <svg
-          width="30"
-          height="2"
-          viewBox="0 0 30 2"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="30" height="2" fill="currentColor" />
-        </svg>
-        <svg
-          width="30"
-          height="2"
-          viewBox="0 0 30 2"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="30" height="2" fill="currentColor" />
-        </svg>
-        <svg
-          width="30"
-          height="2"
-          viewBox="0 0 30 2"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="30" height="2" fill="currentColor" />
-        </svg>
+      <div
+        className={`pro-house-header__burger-button ${openMenu ? "open" : ""}`}
+        onClick={() => setOpenMenu(!openMenu)}
+      >
+        <SvgIcon src={`/icons/burger-line.svg`} />
+        <SvgIcon src={`/icons/burger-line.svg`} />
+        <SvgIcon src={`/icons/burger-line.svg`} />
       </div>
       <div className="pro-house-header__menu-side">
         <div className="pro-house-header__logo">
@@ -62,37 +55,66 @@ const AppHeader = () => {
           </svg>
           <span>ProHouse</span>
         </div>
+        <div className="pro-house-header__menu-side__links">
+          {links.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="pro-house-header__menu-side__links__item"
+              >
+                {t(item.label)}
+              </div>
+            );
+          })}
+        </div>
       </div>
       <div className="pro-house-header__actions-side">
-        {/* <button onClick={toggleTheme}>
-          Switch to {theme === "light" ? "Dark" : "Light"} Theme
-        </button>
-        <button onClick={() => switchLang("en")}>EN</button>
-        <button onClick={() => switchLang("fr")}>FR</button>
-        <button onClick={() => switchLang("ar")}>AR</button> */}
         <div className="pro-house-header__actions-side__favorite">
           <span></span>
-          <svg
-            width="20"
-            height="19"
-            viewBox="0 0 20 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.5 0C17.538 0 20 2.5 20 6C20 13 12.5 17 10 18.5C7.5 17 0 13 0 6C0 2.5 2.5 0 5.5 0C7.36 0 9 1 10 2C11 1 12.64 0 14.5 0ZM10.934 15.604C11.815 15.048 12.61 14.495 13.354 13.903C16.335 11.533 18 8.943 18 6C18 3.64 16.463 2 14.5 2C13.424 2 12.26 2.57 11.414 3.414L10 4.828L8.586 3.414C7.74 2.57 6.576 2 5.5 2C3.56 2 2 3.656 2 6C2 8.944 3.666 11.533 6.645 13.903C7.39 14.495 8.185 15.048 9.066 15.603C9.365 15.792 9.661 15.973 10 16.175C10.339 15.973 10.635 15.792 10.934 15.604Z"
-              fill="currentColor"
-            />
-          </svg>
+          <SvgIcon src="/icons/hearth.svg" />
         </div>
         <button
-          onClick={() => switchLang("ar")}
+          onClick={() => {}}
           className="pro-house-header__actions-side__connect-wallet"
         >
           {t("connect-wallet")}
         </button>
       </div>
-      <div className={`pro-house-header__mobile-menu ${openMenu ? 'open' : ''}`}>menu</div>
+      <div
+        className={`pro-house-header__mobile-menu ${openMenu ? "open" : ""}`}
+      >
+        <div className="pro-house-header__mobile-menu__content">
+          {links.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="pro-house-header__mobile-menu__content__item"
+              >
+                {t(item.label)}
+              </div>
+            );
+          })}
+        </div>
+        <div className="pro-house-header__mobile-menu__footer">
+          <button
+            onClick={() => switchLang("fr")}
+            style={{ display: "flex" }}
+            className="pro-house-header__actions-side__connect-wallet"
+          >
+            {t("connect-wallet")}
+          </button>
+          <div
+            onClick={toggleTheme}
+            className="pro-house-header__mobile-menu__footer__theme-button"
+          >
+            {theme === "light" ? (
+              <SvgIcon src="/icons/crescent.svg" />
+            ) : (
+              <SvgIcon src="/icons/light.svg" />
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

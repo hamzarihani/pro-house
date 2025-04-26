@@ -1,3 +1,13 @@
 {
-  "connect-wallet": "اتصل بالمحفظة"
+  "connect-wallet": "اتصل بالمحفظة",
+  "nav-items": {
+    "marketplace": "السوق",
+    "about-us": "من نحن",
+    "developers": "المطورون"
+  },
+  "langs": {
+    "ar": "العربية",
+    "en": "الإنجليزية",
+    "fr": "الفرنسية"
+  }
 }

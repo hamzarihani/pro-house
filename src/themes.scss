@@ -5,8 +5,6 @@
   --primary-color: #356df6;
   --primary-color-rgb: 53, 108, 246;
   --text-color: #ffffff;
-  --white-color: #ffffff;
-  --black-color: #000000;
 }
 
 .theme-light {
@@ -16,6 +14,11 @@
   --primary-color: #356df6;
   --primary-color-rgb: 53, 108, 246;
   --text-color: #000000;
+}
+:root {
+  // Sizes
+  --side-mobile-menu-footer-height: 200px;
+  // Colors
   --white-color: #ffffff;
   --black-color: #000000;
 }

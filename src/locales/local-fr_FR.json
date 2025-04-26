@@ -1,3 +1,13 @@
 {
-  "connect-wallet": "Connecter le portefeuille"
+  "connect-wallet": "Connecter le portefeuille",
+  "nav-items": {
+    "marketplace": "Marché",
+    "about-us": "À propos de nous",
+    "developers": "Développeurs"
+  },
+  "langs": {
+    "ar": "Arabe",
+    "en": "Anglais",
+    "fr": "Français"
+  }
 }

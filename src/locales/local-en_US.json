@@ -1,3 +1,13 @@
 {
-  "connect-wallet": "Connect Wallet"
+  "connect-wallet": "Connect Wallet",
+  "nav-items": {
+    "marketplace": "Marketplace",
+    "about-us": "About Us",
+    "developers": "Developers"
+  },
+  "langs": {
+    "ar": "Arabic",
+    "en": "English",
+    "fr": "French"
+  }
 }
