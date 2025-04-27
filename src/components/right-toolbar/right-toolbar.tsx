@@ -1,20 +1,11 @@
 import "./rigth-toolbar.scss";
-import { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
-import SvgIcon from "../svg-icon";
+import LangToggle from "../lang-toggle/lang-toggle";
 
 const RightToolbar = () => {
-  const { i18n, t } = useTranslation();
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [openMenu, setOpenMenu] = useState(false);
 
-  const switchLang = (lang: string) => {
-    i18n.changeLanguage(lang);
-  };
-  const supportedLngs = Array.isArray(i18n.options.supportedLngs)
-    ? i18n.options.supportedLngs.slice(0, -1)
-    : ["ar", "en", "fr"];
   return (
     <div className="right-toolbar">
       <div onClick={toggleTheme} className="right-toolbar__theme-button">
@@ -54,33 +45,7 @@ const RightToolbar = () => {
           </svg>
         )}
       </div>
-      <div
-        className="right-toolbar__lang-toggle"
-        onMouseEnter={() => setOpenMenu(true)}
-        onMouseLeave={() => setOpenMenu(false)}
-      >
-        <SvgIcon src={`/icons/${i18n.language}.svg`} />
-        <div
-          className={`right-toolbar__lang-toggle__menu ${
-            openMenu ? "" : "closed"
-          }`}
-        >
-          {supportedLngs.map((value: string, index: number) => {
-            return (
-              <div
-                key={index}
-                className={`right-toolbar__lang-toggle__menu__item ${
-                  i18n.language === value ? "selected" : ""
-                }`}
-                onClick={() => switchLang(value)}
-              >
-                <SvgIcon src={`/icons/${value}.svg`} />
-                {t(`langs.${value}`)}
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <LangToggle></LangToggle>
     </div>
   );
 };

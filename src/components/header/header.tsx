@@ -3,26 +3,27 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import { useTranslation } from "react-i18next";
 import SvgIcon from "../svg-icon";
+import LangToggle from "../lang-toggle/lang-toggle";
 
 const AppHeader = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [openMenu, setOpenMenu] = useState(false);
 
-  const switchLang = (lang: string) => {
-    i18n.changeLanguage(lang);
-  };
   const links = [
     {
       label: "nav-items.marketplace",
+      pos: "start",
       onClick: () => {},
     },
     {
       label: "nav-items.about-us",
+      pos: "center",
       onClick: () => {},
     },
     {
       label: "nav-items.developers",
+      pos: "end",
       onClick: () => {},
     },
   ];
@@ -60,7 +61,7 @@ const AppHeader = () => {
             return (
               <div
                 key={idx}
-                className="pro-house-header__menu-side__links__item"
+                className={`pro-house-header__menu-side__links__item ${item.pos}`}
               >
                 {t(item.label)}
               </div>
@@ -94,15 +95,17 @@ const AppHeader = () => {
               </div>
             );
           })}
-        </div>
-        <div className="pro-house-header__mobile-menu__footer">
           <button
-            onClick={() => switchLang("fr")}
+            onClick={() => {}}
             style={{ display: "flex" }}
             className="pro-house-header__actions-side__connect-wallet"
           >
             {t("connect-wallet")}
           </button>
+        </div>
+        <div className="pro-house-header__mobile-menu__footer">
+          
+          <LangToggle style={{ position: "relative" }} menuStyle={{bottom:"0px",top:"unset", left: "30px"}}></LangToggle>
           <div
             onClick={toggleTheme}
             className="pro-house-header__mobile-menu__footer__theme-button"

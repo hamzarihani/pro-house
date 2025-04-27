@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import AppHeader from './components/header/header';
 import { useTranslation } from 'react-i18next';
 import RightToolbar from './components/right-toolbar/right-toolbar';
+import AppContent from './components/app-main/app-main';
 
 function App() {
   const { i18n } = useTranslation();
@@ -16,6 +17,7 @@ function App() {
     <div className="pro-house-app">
       <RightToolbar></RightToolbar>
       <AppHeader></AppHeader>
+      <AppContent></AppContent>
     </div>
   );
 }

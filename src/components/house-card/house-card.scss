@@ -1,0 +1,104 @@
+.house-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  width: 256px;
+  height: 338px;
+  background: #1b1f33;
+  border-radius: 12px;
+  gap: 12px;
+  &__image-container {
+    width: 100%;
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    max-height: 231px;
+    &__fav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      right: 12px;
+      top: 12px;
+      background: rgba(18, 20, 32, 0.75);
+      border-radius: 50%;
+      flex: none;
+      flex-grow: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    & > span:first-child {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #ffffff;
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+    & > span:last-child {
+      width: 256px;
+      height: 17px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #5e6379;
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+  }
+  &__time-and-price {
+    display: grid;
+    width: 100%;
+    gap: 5px;
+    grid-template-columns: 140px auto;
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      flex: none;
+      flex-grow: 1;
+      & > span:nth-child(1) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+      & > span:nth-child(2) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #5e6379;
+        flex: none;
+        flex-grow: 0;
+      }
+    }
+  }
+}
+@media all and (max-width: 1024px) {
+  .app-content-container {
+    height: calc(100dvh - 65px);
+  }
+}

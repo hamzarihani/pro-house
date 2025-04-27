@@ -1,6 +1,10 @@
 @import './themes.scss';
 @import './fonts/fonts.css';
 
+html{
+  height: 100%;
+  width: 100%;
+}
 
 body {
   background: var(--body-background);

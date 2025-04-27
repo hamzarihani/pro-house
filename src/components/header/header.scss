@@ -36,8 +36,38 @@
         text-overflow: ellipsis;
         width: 100%;
         cursor: pointer;
-        &:hover{
-          text-decoration: underline;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--primary-color);
+          transition: transform 0.25s ease-out;
+        }
+        &:hover::after {
+          transform: scaleX(1);
+        }
+        &.start::after {
+          transform-origin: bottom right;
+        }
+        &.start:hover::after {
+          transform-origin: bottom left;
+        }
+        &.center::after {
+          transform-origin: bottom center;
+        }
+        &.center:hover::after {
+          transform-origin: bottom center;
+        }
+        &.end::after {
+          transform-origin: bottom left;
+        }
+        &.end:hover::after {
+          transform-origin: bottom right;
         }
       }
     }
@@ -71,7 +101,7 @@
       background: var(--primary-color);
       border-radius: 4px;
       font-weight: 700;
-      font-size: 16px;
+      font-size: clamp(8px, 3vw, 16px);
       line-height: 19px;
       color: var(--white-color);
       border: unset;
@@ -176,6 +206,7 @@
           line-height: 24px;
           flex: none;
           flex-grow: 0;
+          transition: all 0.4s;
           &:hover {
             background: rgba(var(--primary-color-rgb), 0.5);
           }
@@ -184,8 +215,9 @@
       &__footer {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
+        padding: 20px;
         color: var(--text-color);
         width: 100%;
         height: var(--side-mobile-menu-footer-height);

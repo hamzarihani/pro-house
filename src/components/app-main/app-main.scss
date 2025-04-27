@@ -1,0 +1,103 @@
+.app-content-container {
+  width: 100%;
+  height: calc(100dvh - 85px);
+  overflow-y: auto;
+  &__landing-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 74px 93px 91px 93px;
+    height: 409px;
+    width: calc(100% - 186px);
+    &__content {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      & > span:nth-child(1) {
+        width: 571px;
+        height: 156px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 78px;
+        color: #ffffff;
+      }
+      & > span:nth-child(2) {
+        width: 441px;
+        height: 64px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        color: #5e6379;
+      }
+      &__primary-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 32px 9px;
+        gap: 10px;
+        width: 132px;
+        height: 44px;
+        background: var(--primary-color);
+        border-radius: 4px;
+        outline: none;
+        border: unset;
+        color: var(--white-color);
+      }
+    }
+    &__stats {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        & > span:nth-child(1) {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 45px;
+          color: #ffffff;
+        }
+        & > span:nth-child(2) {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 32px;
+          color: #545b79;
+        }
+      }
+    }
+    &__cards{
+      position: relative;
+      height: 100%;
+      &__first-card{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        transform: translate(10px, 7%) rotate(8deg);
+      }
+      &__second-card{
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+        transform: translate(47px, -2%) rotate(-10deg);
+
+      }
+    }
+  }
+}
+@media all and (max-width: 1024px) {
+  .app-content-container {
+    height: calc(100dvh - 65px);
+  }
+}
