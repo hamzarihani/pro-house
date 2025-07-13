@@ -17,6 +17,34 @@ const AppContent = () => {
             Explore
           </button>
         </div>
+        <div className="app-content-container__landing-section__cards-container">
+          <div className="app-content-container__landing-section__cards">
+            <div className="app-content-container__landing-section__cards__first-card">
+              <HouseCard
+                image="/assets/rachel-claire.png"
+                title="Wish house"
+                description="@UA real estate agency"
+                remainingTimeLabel="Remaining Time"
+                remainingTimeValue="09h : 45m : 08s"
+                priceLabel="Current Bid"
+                priceValue="29.71 ETH"
+                liked={false}
+              ></HouseCard>
+            </div>
+            <div className="app-content-container__landing-section__cards__second-card">
+              <HouseCard
+                image="/assets/rachel-claire.png"
+                title="Wish house"
+                description="@UA real estate agency"
+                remainingTimeLabel="Remaining Time"
+                remainingTimeValue="09h : 45m : 08s"
+                priceLabel="Current Bid"
+                priceValue="29.71 ETH"
+                liked={true}
+              ></HouseCard>
+            </div>
+          </div>
+        </div>
         <div className="app-content-container__landing-section__stats">
           <div className="app-content-container__landing-section__stats__box">
             <span>12k+</span>
@@ -31,33 +59,8 @@ const AppContent = () => {
             <span>developers</span>
           </div>
         </div>
-        <div className="app-content-container__landing-section__cards">
-          <div className="app-content-container__landing-section__cards__first-card">
-            <HouseCard
-              image="/assets/rachel-claire.png"
-              title="Wish house"
-              description="@UA real estate agency"
-              remainingTimeLabel="Remaining Time"
-              remainingTimeValue="09h : 45m : 08s"
-              priceLabel="Current Bid"
-              priceValue="29.71 ETH"
-              liked={true}
-            ></HouseCard>
-          </div>
-          <div className="app-content-container__landing-section__cards__second-card">
-            <HouseCard
-              image="/assets/rachel-claire.png"
-              title="Wish house"
-              description="@UA real estate agency"
-              remainingTimeLabel="Remaining Time"
-              remainingTimeValue="09h : 45m : 08s"
-              priceLabel="Current Bid"
-              priceValue="29.71 ETH"
-              liked={true}
-            ></HouseCard>
-          </div>
-        </div>
       </div>
+      <div className="app-content-container__partners-section"></div>
     </div>
   );
 };

@@ -6,6 +6,7 @@
   padding: 24.5px 93px;
   left: 0px;
   top: 0px;
+  z-index: 99;
   border-bottom: 1px solid var(--app-header-border);
   background: var(--app-header-background);
   &__burger-button {
@@ -219,7 +220,7 @@
         gap: 10px;
         padding: 20px;
         color: var(--text-color);
-        width: 100%;
+        width: calc(100% - 40px);
         height: var(--side-mobile-menu-footer-height);
         &__theme-button {
           display: flex;

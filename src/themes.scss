@@ -5,6 +5,8 @@
   --primary-color: #356df6;
   --primary-color-rgb: 53, 108, 246;
   --text-color: #ffffff;
+  --mode-100: #ffffff;
+  --mode-200: #5E6379;
 }
 
 .theme-light {
@@ -14,6 +16,8 @@
   --primary-color: #356df6;
   --primary-color-rgb: 53, 108, 246;
   --text-color: #000000;
+  --mode-100: #121420;
+  --mode-200: #545B79;
 }
 :root {
   // Sizes

@@ -2,6 +2,7 @@
   position: absolute;
   right: 0;
   top: 50%;
+  z-index: 99;
   width: 30px;
   height: max-content;
   background: var(--app-header-background);

@@ -2,37 +2,53 @@
   width: 100%;
   height: calc(100dvh - 85px);
   overflow-y: auto;
+  scrollbar-width: auto; /* fallback for Firefox */
+  // scrollbar-color: #888 #f1f1f1;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--body-background);
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
   &__landing-section {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     padding: 74px 93px 91px 93px;
-    height: 409px;
+    height: max-content;
     width: calc(100% - 186px);
+    transition: all 300ms;
     &__content {
+      grid-column: 1;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
       gap: 12px;
-      flex: 1;
+      transition: all 300ms;
       & > span:nth-child(1) {
-        width: 571px;
-        height: 156px;
+        max-width: 571px;
         font-style: normal;
         font-weight: 700;
-        font-size: 64px;
-        line-height: 78px;
-        color: #ffffff;
+        font-size: clamp(36px, 6vw, 64px);
+        line-height: 1.4;
+        color: var(--mode-100);
       }
       & > span:nth-child(2) {
-        width: 441px;
-        height: 64px;
+        max-width: 441px;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        font-size:  clamp(16px, 6vw, 18px);
         line-height: 32px;
-        color: #5e6379;
+        color: var(--mode-200);
       }
       &__primary-button {
         display: flex;
@@ -51,9 +67,11 @@
       }
     }
     &__stats {
+      grid-column: 1 / span 2;
       display: flex;
       align-items: center;
       gap: 60px;
+      transition: all 300ms;
       &__box {
         display: flex;
         flex-direction: column;
@@ -64,40 +82,109 @@
           font-weight: 700;
           font-size: 36px;
           line-height: 45px;
-          color: #ffffff;
+          color: var(--mode-100);
         }
         & > span:nth-child(2) {
           font-style: normal;
           font-weight: 400;
           font-size: 18px;
           line-height: 32px;
-          color: #545b79;
+          color: var(--mode-200);
         }
       }
+    }
+    &__cards-container{
+      grid-column: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      height: 288px;
+      transition: all 300ms;
     }
     &__cards{
       position: relative;
       height: 100%;
+      width: max-content;
+      transition: all 300ms;
       &__first-card{
         position: absolute;
         top: 0;
         left: 0;
         z-index: 5;
-        transform: translate(10px, 7%) rotate(8deg);
+        transform: translate(-20px, 7%) rotate(8deg);
       }
       &__second-card{
         position: absolute;
         top: 0;
         right: 0;
-        
-        transform: translate(47px, -2%) rotate(-10deg);
+        transform: translate(17px, -2%) rotate(-10deg);
 
       }
     }
   }
+  &__partners-section{
+    height: 124px;
+    padding: 50px 120px;
+  }
 }
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1250px) {
   .app-content-container {
     height: calc(100dvh - 65px);
+    &__landing-section{
+      padding: 20px 11px 20px 16px;
+      width: calc(100% - 27px);
+      gap: 40px 40px;
+      grid-template-columns: 1fr;
+      &__content {
+        grid-row: 1;
+        width: calc(100% - 32px);
+      }
+
+      &__cards-container {
+        grid-column: 1;
+        grid-row: 2;
+        height: 326px;
+      }
+
+      &__cards{
+        scale: 0.8;
+        transform-origin: top left;
+      }
+
+      &__stats {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        gap: 30px;
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
+@media all and (max-width: 600px) {
+  .app-content-container {
+    &__landing-section{
+      &__cards-container {
+        height: 285px;
+      }
+      &__cards{
+        scale: 0.7;
+      }
+       &__stats {
+        grid-column: 1;
+       }
+    }
+  }
+}
+@media all and (max-width: 450px) {
+  .app-content-container {
+    &__landing-section{
+      &__cards-container {
+        height: 235px;
+      }
+      &__cards{
+        scale: 0.58;
+      }
+    }
   }
 }
