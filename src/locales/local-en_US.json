@@ -1,13 +1,122 @@
 {
   "connect-wallet": "Connect Wallet",
+  "wallet-connected": "Connected",
+  "disconnect": "Disconnect",
+  "balance": "Balance",
+  "network": "Network",
+  "copy-address": "Copy Address",
+  "address-copied": "Address Copied!",
   "nav-items": {
     "marketplace": "Marketplace",
     "about-us": "About Us",
-    "developers": "Developers"
+    "developers": "Developers",
+    "how-it-works": "How It Works"
   },
   "langs": {
-    "ar": "Arabic",
+    "ar": "العربية",
     "en": "English",
-    "fr": "French"
+    "fr": "Français"
+  },
+  "hero": {
+    "tag": "Next-Gen Metaverse Real Estate",
+    "title": "Future of real estate investing",
+    "description": "Our real estate is virtual property you can purchase on a metaverse platform. Own, build, monetize, and trade digital land with smart contract transparency.",
+    "explore-btn": "Explore Marketplace",
+    "whitepaper-btn": "Metaverse Map",
+    "live-auction": "Live Auction"
+  },
+  "stats": {
+    "properties": "Properties",
+    "auction": "Auctions",
+    "developers": "Developers",
+    "volume": "Trading Volume"
+  },
+  "partners": {
+    "title": "Supported Metaverse Protocols & Ecosystem"
+  },
+  "marketplace": {
+    "title": "Metaverse Parcels & Estates",
+    "subtitle": "Curated digital land and architect-designed virtual properties ready for immediate acquisition",
+    "filter-all": "All Estates",
+    "filter-villa": "Cyber Villas",
+    "filter-penthouse": "Sky Penthouses",
+    "filter-island": "Floating Islands",
+    "filter-gallery": "Art Pavilions",
+    "search-placeholder": "Search by estate title, architect, or world...",
+    "sort-by": "Sort By",
+    "sort-price-asc": "Price: Low to High",
+    "sort-price-desc": "Price: High to Low",
+    "sort-ending-soon": "Ending Soon",
+    "no-results": "No properties match your filter criteria."
+  },
+  "card": {
+    "remaining-time": "Remaining Time",
+    "current-bid": "Current Bid",
+    "place-bid": "Place Bid",
+    "view-details": "View Details",
+    "bids-count": "bids"
+  },
+  "how-it-works": {
+    "badge": "Simple & Decentralized",
+    "title": "How Virtual Real Estate Works",
+    "subtitle": "Four seamless steps to acquiring, securing, and monetizing prime metaverse properties.",
+    "step1-title": "Connect Web3 Wallet",
+    "step1-desc": "Link your MetaMask, Coinbase, or Phantom wallet in one click to verify identity and custody.",
+    "step2-title": "Explore Prime Parcels",
+    "step2-desc": "Browse verified coordinates in Decentraland, Sandbox, and Somnium with high-fidelity spatial previews.",
+    "step3-title": "Place Your Bid",
+    "step3-desc": "Compete in live decentralized auctions with automated smart contract escrow and non-custodial security.",
+    "step4-title": "Earn Yield & Monetize",
+    "step4-desc": "Host virtual brand events, lease your estate to global creators, or trade with instant liquidity."
+  },
+  "about": {
+    "badge": "Why ProHouse",
+    "title": "Revolutionizing Real Estate for the Digital Frontier",
+    "description": "We bridge traditional physical asset valuation with digital scarcity and borderless Web3 liquidity. Every virtual deed is an ERC-721 token verifiable on Ethereum.",
+    "feat1-title": "Smart Contract Deeds",
+    "feat1-desc": "100% on-chain verifiable ownership proof with automated royalties and immutable transaction history.",
+    "feat2-title": "Fractional Ownership",
+    "feat2-desc": "Co-invest in high-valuation flagship metaverse districts starting from as low as 0.05 ETH.",
+    "feat3-title": "Global Instant Liquidity",
+    "feat3-desc": "Trade metaverse properties 24/7 across borders with zero title delays or intermediary fees.",
+    "feat4-title": "Architect Certified",
+    "feat4-desc": "Every parcel includes photorealistic 3D assets ready for instant deployment into popular virtual worlds."
+  },
+  "developers": {
+    "badge": "Developer Ecosystem",
+    "title": "Build the Metaverse with ProHouse SDK",
+    "subtitle": "Comprehensive developer tooling, spatial APIs, and smart contract libraries for digital architects and Web3 studios.",
+    "sdk-title": "ProHouse Core TypeScript SDK",
+    "sdk-desc": "Integrate real-time parcel valuation, bidding engines, and 3D metaverse assets into your Web, Unity, or Unreal applications.",
+    "api-doc-btn": "Explore SDK Documentation",
+    "grant-btn": "Apply for Architect Grant"
+  },
+  "modal": {
+    "wallet-title": "Connect Your Wallet",
+    "wallet-subtitle": "Select your Web3 wallet provider to explore, place bids, and manage your virtual properties.",
+    "property-details": "Estate Details & Auction",
+    "coordinates": "Coordinates",
+    "platform": "Metaverse Platform",
+    "highest-bidder": "Highest Bidder",
+    "bid-history": "Bid History",
+    "your-bid": "Your Bid Amount (ETH)",
+    "min-bid-warning": "Your bid must be higher than current bid",
+    "confirm-bid": "Submit On-Chain Bid",
+    "bid-success": "Bid submitted successfully! You are now highest bidder.",
+    "wallet-needed": "Please connect your wallet first to place a bid.",
+    "favorites-title": "Saved Estates",
+    "no-favorites": "You haven't saved any estates yet. Tap the heart icon on any card to save it here!",
+    "clear-all": "Clear All"
+  },
+  "footer": {
+    "tagline": "The premier gateway to high-yield virtual real estate and architectural metaverse assets.",
+    "quick-links": "Navigation",
+    "platforms": "Supported Worlds",
+    "community": "Community & Social",
+    "newsletter-title": "Stay Ahead of the Metaverse",
+    "newsletter-desc": "Receive weekly drop notifications, architectural reveals, and virtual land analytics.",
+    "subscribe": "Subscribe",
+    "subscribed-msg": "Subscribed! Welcome to ProHouse Insider.",
+    "rights": "All rights reserved. ProHouse Metaverse Real Estate."
   }
 }

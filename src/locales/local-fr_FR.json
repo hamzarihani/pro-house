@@ -1,13 +1,122 @@
 {
   "connect-wallet": "Connecter le portefeuille",
+  "wallet-connected": "Connecté",
+  "disconnect": "Déconnecter",
+  "balance": "Solde",
+  "network": "Réseau",
+  "copy-address": "Copier l'adresse",
+  "address-copied": "Adresse copiée !",
   "nav-items": {
     "marketplace": "Marché",
-    "about-us": "À propos de nous",
-    "developers": "Développeurs"
+    "about-us": "À propos",
+    "developers": "Développeurs",
+    "how-it-works": "Fonctionnement"
   },
   "langs": {
-    "ar": "Arabe",
-    "en": "Anglais",
+    "ar": "العربية",
+    "en": "English",
     "fr": "Français"
+  },
+  "hero": {
+    "tag": "Immobilier Métavers Nouvelle Génération",
+    "title": "L'avenir de l'investissement immobilier",
+    "description": "Notre immobilier se compose de propriétés virtuelles que vous pouvez acquérir sur une plateforme métavers. Possédez, construisez, monétisez et échangez des terrains numériques.",
+    "explore-btn": "Explorer le marché",
+    "whitepaper-btn": "Carte Métavers",
+    "live-auction": "Enchère en direct"
+  },
+  "stats": {
+    "properties": "Propriétés",
+    "auction": "Enchères",
+    "developers": "Développeurs",
+    "volume": "Volume d'échange"
+  },
+  "partners": {
+    "title": "Protocoles Métavers & Écosystème Pris en Charge"
+  },
+  "marketplace": {
+    "title": "Parcelles & Propriétés Métavers",
+    "subtitle": "Terrains numériques d'exception et propriétés virtuelles conçues par des architectes de renom",
+    "filter-all": "Toutes",
+    "filter-villa": "Cyber Villas",
+    "filter-penthouse": "Penthouses Célestes",
+    "filter-island": "Îles Flottantes",
+    "filter-gallery": "Pavillons d'Art",
+    "search-placeholder": "Rechercher par titre, architecte ou monde...",
+    "sort-by": "Trier par",
+    "sort-price-asc": "Prix : Croissant",
+    "sort-price-desc": "Prix : Décroissant",
+    "sort-ending-soon": "Bientôt terminé",
+    "no-results": "Aucune propriété ne correspond à vos critères."
+  },
+  "card": {
+    "remaining-time": "Temps Restant",
+    "current-bid": "Offre Actuelle",
+    "place-bid": "Enchérir",
+    "view-details": "Voir Détails",
+    "bids-count": "enchères"
+  },
+  "how-it-works": {
+    "badge": "Simple & Décentralisé",
+    "title": "Comment fonctionne l'investissement virtuel",
+    "subtitle": "Quatre étapes simples pour acquérir, sécuriser et monétiser vos propriétés métavers.",
+    "step1-title": "Connecter le Portefeuille",
+    "step1-desc": "Associez votre portefeuille MetaMask, Coinbase ou Phantom en un clic.",
+    "step2-title": "Explorer les Parcelles",
+    "step2-desc": "Parcourez des coordonnées vérifiées sur Decentraland, Sandbox et Somnium avec aperçu 3D.",
+    "step3-title": "Placer une Enchère",
+    "step3-desc": "Participez à des enchères décentralisées en temps réel sécurisées par contrats intelligents.",
+    "step4-title": "Monétiser & Développer",
+    "step4-desc": "Organisez des événements, louez vos parcelles à des marques ou revendez avec liquidité immédiate."
+  },
+  "about": {
+    "badge": "Pourquoi ProHouse",
+    "title": "Révolutionner l'immobilier pour l'ère numérique",
+    "description": "Nous combinons la valeur patrimoniale avec la rareté numérique et la liquidité sans frontières du Web3. Chaque titre de propriété est un jeton ERC-721 vérifiable sur Ethereum.",
+    "feat1-title": "Titres par Contrats Intelligents",
+    "feat1-desc": "Preuve de propriété 100% vérifiable on-chain avec historique immuable et redevances automatisées.",
+    "feat2-title": "Propriété Fractionnée",
+    "feat2-desc": "Co-investissez dans des domaines métavers prestigieux dès 0,05 ETH.",
+    "feat3-title": "Liquidité Mondiale Immédiate",
+    "feat3-desc": "Échangez des biens 24h/24 sans frais de notaire ni démarches administratives complexes.",
+    "feat4-title": "Certifié par Architectes",
+    "feat4-desc": "Chaque parcelle intègre des modèles 3D prêts pour les mondes virtuels les plus populaires."
+  },
+  "developers": {
+    "badge": "Écosystème Développeurs",
+    "title": "Bâtissez le Métavers avec le SDK ProHouse",
+    "subtitle": "Outils complets, APIs spatiales et bibliothèques de contrats intelligents pour architectes numériques.",
+    "sdk-title": "SDK ProHouse TypeScript",
+    "sdk-desc": "Intégrez l'évaluation foncière en temps réel, les moteurs d'enchères et les actifs 3D dans vos applications Web, Unity ou Unreal.",
+    "api-doc-btn": "Consulter la Documentation SDK",
+    "grant-btn": "Postuler pour une Bourse Architecte"
+  },
+  "modal": {
+    "wallet-title": "Connecter Votre Portefeuille",
+    "wallet-subtitle": "Choisissez votre portefeuille Web3 favori pour explorer, enchérir et gérer vos propriétés.",
+    "property-details": "Détails & Enchères de la Propriété",
+    "coordinates": "Coordonnées Métavers",
+    "platform": "Plateforme",
+    "highest-bidder": "Meilleur Enchérisseur",
+    "bid-history": "Historique des Offres",
+    "your-bid": "Montant de votre offre (ETH)",
+    "min-bid-warning": "Votre offre doit être supérieure à l'offre actuelle",
+    "confirm-bid": "Soumettre l'Offre On-Chain",
+    "bid-success": "Offre soumise avec succès ! Vous êtes désormais le meilleur enchérisseur.",
+    "wallet-needed": "Veuillez d'abord connecter votre portefeuille pour enchérir.",
+    "favorites-title": "Propriétés Enregistrées",
+    "no-favorites": "Vous n'avez pas encore enregistré de propriétés. Cliquez sur le cœur pour en ajouter !",
+    "clear-all": "Tout Effacer"
+  },
+  "footer": {
+    "tagline": "La passerelle de référence vers l'immobilier virtuel à fort rendement et les actifs d'architectes du métavers.",
+    "quick-links": "Navigation",
+    "platforms": "Mondes Pris en Charge",
+    "community": "Communauté",
+    "newsletter-title": "Restez en Avance sur le Métavers",
+    "newsletter-desc": "Recevez chaque semaine les nouveautés, lancements d'architectes et analyses foncières.",
+    "subscribe": "S'abonner",
+    "subscribed-msg": "Abonnement confirmé ! Bienvenue parmi nous.",
+    "rights": "Tous droits réservés. ProHouse Métavers Immobilier."
   }
 }
