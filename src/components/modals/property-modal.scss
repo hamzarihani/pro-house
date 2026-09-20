@@ -1,0 +1,392 @@
+.property-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.property-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--modal-background);
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm), var(--shadow-glow);
+  padding: 32px;
+  color: var(--text-color);
+  animation: scaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--mode-200);
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.property-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.property-modal-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    }
+
+    .property-modal-media__badges {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+
+      .platform-tag {
+        font-size: 11px;
+        font-weight: 700;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .coords-tag {
+        font-size: 11px;
+        font-weight: 600;
+        background: rgba(53, 108, 246, 0.7);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 20px;
+      }
+    }
+
+    .fav-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__footer-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: var(--surface-background);
+    border: 1px solid var(--surface-border);
+    padding: 14px;
+    border-radius: 12px;
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .label {
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--mode-200);
+        letter-spacing: 0.5px;
+      }
+
+      .val {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--mode-100);
+
+        &.highlight {
+          color: #ef4444;
+        }
+
+        &.primary {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+.property-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__header {
+    h2 {
+      margin: 0 0 6px 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--mode-100);
+    }
+    .description {
+      margin: 0;
+      font-size: 14px;
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+  }
+
+  .property-spec-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    .spec-chip {
+      background: var(--surface-background);
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .spec-title {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: var(--mode-200);
+      }
+
+      .spec-data {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--mode-100);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &.code {
+          font-family: monospace;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .property-bid-form {
+    background: var(--surface-background);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .form-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--mode-100);
+      }
+
+      .quick-bid-buttons {
+        display: flex;
+        gap: 6px;
+
+        button {
+          background: var(--badge-background);
+          border: 1px solid rgba(53, 108, 246, 0.2);
+          color: var(--primary-color);
+          font-size: 11px;
+          font-weight: 600;
+          padding: 3px 8px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &:hover {
+            background: var(--primary-color);
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+
+      input {
+        flex: 1;
+        background: var(--input-background);
+        border: 1px solid var(--input-border);
+        border-radius: 8px;
+        padding: 10px 14px;
+        color: var(--text-color);
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &:focus {
+          border-color: var(--primary-color);
+        }
+      }
+
+      .bid-action-btn {
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        white-space: nowrap;
+        transition: all 0.2s;
+
+        &.submit {
+          background: var(--primary-color);
+          color: #fff;
+
+          &:hover {
+            box-shadow: 0 4px 14px rgba(53, 108, 246, 0.4);
+          }
+        }
+
+        &.connect {
+          background: rgba(53, 108, 246, 0.15);
+          color: var(--primary-color);
+          border: 1px solid var(--primary-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .bid-alert {
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 6px;
+
+      &.error {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+
+      &.success {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+      }
+    }
+  }
+
+  .property-bid-history {
+    h4 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--mode-100);
+    }
+
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: var(--surface-background);
+      border-radius: 6px;
+      border: 1px solid var(--surface-border);
+
+      .bidder-col {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .bidder-id {
+          font-family: monospace;
+          font-size: 12px;
+          color: var(--mode-100);
+        }
+
+        .bid-time {
+          font-size: 10px;
+          color: var(--mode-200);
+        }
+      }
+
+      .bid-amount {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+    }
+  }
+}

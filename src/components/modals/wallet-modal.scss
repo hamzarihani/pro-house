@@ -1,0 +1,234 @@
+.wallet-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wallet-modal-dialog {
+  width: 90%;
+  max-width: 480px;
+  background: var(--modal-background);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm), var(--shadow-glow);
+  padding: 28px;
+  color: var(--text-color);
+  animation: scaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+    &__title-group {
+      h3 {
+        margin: 0 0 6px 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--mode-100);
+      }
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: var(--mode-200);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &__close-btn {
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--mode-200);
+    cursor: pointer;
+    transition: color 0.2s;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.wallet-providers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wallet-provider-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--surface-background);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(53, 108, 246, 0.15);
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .wallet-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wallet-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mode-100);
+  }
+
+  .wallet-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: var(--badge-background);
+    color: var(--primary-color);
+  }
+}
+
+.wallet-connected-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .wallet-card-summary {
+    background: var(--surface-background);
+    border: 1px solid var(--surface-border);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__provider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--mode-100);
+
+      .wallet-status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 8px #10b981;
+      }
+    }
+
+    &__address {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--input-background);
+      border: 1px solid var(--input-border);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--mode-100);
+
+      .copy-btn {
+        background: var(--badge-background);
+        border: none;
+        color: var(--primary-color);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &.copied {
+          background: #10b981;
+          color: #ffffff;
+        }
+      }
+    }
+
+    &__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+
+      .stat-pill {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .stat-label {
+          font-size: 11px;
+          color: var(--mode-200);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .stat-val {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .disconnect-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #ef4444;
+      color: #ffffff;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
