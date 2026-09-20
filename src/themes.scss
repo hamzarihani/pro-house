@@ -6,23 +6,50 @@
   --primary-color-rgb: 53, 108, 246;
   --text-color: #ffffff;
   --mode-100: #ffffff;
-  --mode-200: #5E6379;
+  --mode-200: #8f95b2;
+  --card-background: #191c2c;
+  --card-border: #23273e;
+  --surface-background: #1f2338;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --badge-background: rgba(53, 108, 246, 0.18);
+  --modal-overlay: rgba(8, 10, 18, 0.8);
+  --modal-background: #171928;
+  --input-background: #121420;
+  --input-border: #2b304c;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 10px 30px rgba(53, 108, 246, 0.25);
 }
 
 .theme-light {
-  --body-background: #F3F4F6;
+  --body-background: #F4F6F9;
   --app-header-background: #FFFFFF;
-  --app-header-border: #D1D5DB;
+  --app-header-border: #E5E7EB;
   --primary-color: #356df6;
   --primary-color-rgb: 53, 108, 246;
-  --text-color: #000000;
-  --mode-100: #121420;
-  --mode-200: #545B79;
+  --text-color: #0F172A;
+  --mode-100: #0F172A;
+  --mode-200: #64748B;
+  --card-background: #FFFFFF;
+  --card-border: #E2E8F0;
+  --surface-background: #F8FAFC;
+  --surface-border: rgba(0, 0, 0, 0.06);
+  --badge-background: rgba(53, 108, 246, 0.1);
+  --modal-overlay: rgba(15, 23, 42, 0.6);
+  --modal-background: #FFFFFF;
+  --input-background: #F1F5F9;
+  --input-border: #CBD5E1;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 10px 30px rgba(53, 108, 246, 0.15);
 }
+
 :root {
   // Sizes
   --side-mobile-menu-footer-height: 100px;
   // Colors
   --white-color: #ffffff;
   --black-color: #000000;
+  --accent-cyan: #00f2fe;
+  --accent-purple: #9d4edd;
+  --accent-emerald: #10b981;
+  --accent-red: #ef4444;
 }

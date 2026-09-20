@@ -1,4 +1,4 @@
-import "./rigth-toolbar.scss";
+import "./right-toolbar.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 import LangToggle from "../lang-toggle/lang-toggle";
