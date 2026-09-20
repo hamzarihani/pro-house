@@ -1,7 +1,7 @@
 # 🏛️ ProHouse — Next-Gen Metaverse Real Estate Platform
 
 <p align="center">
-  <img src="public/assets/penthouse.jpg" alt="ProHouse Metaverse Real Estate" width="100%" style="border-radius: 12px; max-height: 420px; object-fit: cover;" />
+  <img src="public/assets/pro-house.png" alt="ProHouse Metaverse Real Estate" width="100%" style="border-radius: 12px; max-height: 420px; object-fit: cover;" />
 </p>
 
 <p align="center">
