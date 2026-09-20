@@ -1,17 +1,24 @@
+import React from "react";
 import "./house-card.scss";
 import { useTranslation } from "react-i18next";
 
-interface HouseCardProps {
+export interface HouseCardProps {
+  id?: string;
   image: string;
   title: string;
   description: string;
-  remainingTimeLabel: string;
+  remainingTimeLabel?: string;
   remainingTimeValue: string;
-  priceLabel: string;
+  priceLabel?: string;
   priceValue: string;
-  liked: boolean;
+  liked?: boolean;
+  platform?: string;
+  coordinates?: string;
+  onPlaceBid?: () => void;
+  onToggleFavorite?: () => void;
 }
-const HouseCard = ({
+
+const HouseCard: React.FC<HouseCardProps> = ({
   image,
   title,
   description,
@@ -19,16 +26,38 @@ const HouseCard = ({
   remainingTimeValue,
   priceLabel,
   priceValue,
-  liked,
-}: HouseCardProps) => {
+  liked = false,
+  platform,
+  onPlaceBid,
+  onToggleFavorite,
+}) => {
   const { t } = useTranslation();
+
   return (
-    <div className="house-card">
+    <div
+      className="house-card"
+      onClick={() => {
+        if (onPlaceBid) onPlaceBid();
+      }}
+    >
       <div
         className="house-card__image-container"
         style={{ backgroundImage: `url("${image}")` }}
       >
-        <div className="house-card__image-container__fav">
+        {platform && (
+          <div className="house-card__platform-badge">
+            <span>{platform}</span>
+          </div>
+        )}
+
+        <div
+          className={`house-card__image-container__fav ${liked ? "is-liked" : ""}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onToggleFavorite) onToggleFavorite();
+          }}
+          title={liked ? "Remove from saved" : "Save estate"}
+        >
           {liked ? (
             <svg
               width="18"
@@ -57,19 +86,38 @@ const HouseCard = ({
             </svg>
           )}
         </div>
+
+        {onPlaceBid && (
+          <div className="house-card__bid-overlay">
+            <button
+              type="button"
+              className="house-card__bid-overlay__btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                onPlaceBid();
+              }}
+            >
+              {t("card.place-bid")}
+            </button>
+          </div>
+        )}
       </div>
+
       <div className="house-card__title">
         <span>{title}</span>
         <span>{description}</span>
       </div>
+
       <div className="house-card__time-and-price">
         <div className="house-card__time-and-price__box">
-          <span>{remainingTimeValue}</span>
-          <span>{remainingTimeLabel}</span>
+          <span className="time-val">{remainingTimeValue}</span>
+          <span className="label">
+            {remainingTimeLabel || t("card.remaining-time")}
+          </span>
         </div>
         <div className="house-card__time-and-price__box">
-          <span>{priceValue}</span>
-          <span>{priceLabel}</span>
+          <span className="price-val">{priceValue}</span>
+          <span className="label">{priceLabel || t("card.current-bid")}</span>
         </div>
       </div>
     </div>
